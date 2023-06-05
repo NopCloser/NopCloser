@@ -1,4 +1,12 @@
-### Hi there 👋
+```go
+body := "Hello, World!"
+rd := ioutil.NopCloser(strings.NewReader(body))
+d, err := ioutil.ReadAll(rd)
+if err != nil {
+	log.Fatalw("failed to read body", zap.Error(err))
+}
+log.Infow("read body", "body", string(d))
+```
 
 <!--
 **NopCloser/NopCloser** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
